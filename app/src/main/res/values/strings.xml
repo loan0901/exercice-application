@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Exercice</string>
+
+    <string-array name="pokemon">
+        <item>pikachu</item>
+        <item>salameche</item>
+        <item>reptincelle</item>
+        <item>dracofeu</item>
+        <item>carapuce</item>
+        <item>carabaffe</item>
+        <item>tortank</item>
+        <item>bulbizarre</item>
+        <item>Herbizarre</item>
+        <item>florizarre</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>pokemon électrique ...</item>
+        <item>pokemon feu ...</item>
+        <item>pokemon feu ...</item>
+        <item>pokemon feu ...</item>
+        <item>pokemon eau ...</item>
+        <item>pokemon eau ...</item>
+        <item>pokemon eau ...</item>
+        <item>pokemon plante ...</item>
+        <item>pokemon plante ...</item>
+        <item>pokemon plante ...</item>
+    </string-array>
+
 </resources>

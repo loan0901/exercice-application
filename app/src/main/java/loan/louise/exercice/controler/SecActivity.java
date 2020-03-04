@@ -1,33 +1,34 @@
 package loan.louise.exercice.controler;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import loan.louise.exercice.R;
 
-public class SecActivity extends AppCompatActivity implements View.OnClickListener {
+public class SecActivity extends AppCompatActivity {
 
-    private TextView secTextView;
-    private Button secButton;
+    RecyclerView recyclerView;
+
+    String s1[], s2[];
+    int images[] = {R.drawable.pikachu,R.drawable.salameche,R.drawable.reptincelle,R.drawable.dracofeu,
+                    R.drawable.carapuce,R.drawable.carabaffe,R.drawable.tortank,
+                    R.drawable.bulbizare,R.drawable.herbizare,R.drawable.florizare};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sec);
 
-        secTextView = (TextView) findViewById(R.id.secTextView1);
-        secButton = (Button) findViewById(R.id.secButton1);
-        secButton.setOnClickListener(this);
-    }
+        recyclerView = findViewById(R.id.recyclerView);
 
-    @Override
-    public void onClick(View v) {
-        Intent mainActivityIntent = new Intent(SecActivity.this,MainActivity.class);
-        startActivity(mainActivityIntent);
+        s1 = getResources().getStringArray(R.array.pokemon);
+        s2 = getResources().getStringArray(R.array.description);
+
+        MyAdapter myAdapter = new MyAdapter(this,s1,s2,images);
+        recyclerView.setAdapter(myAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }
